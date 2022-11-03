@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# custom
+
+# statements
+server/statements/*.PDF
