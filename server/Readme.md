@@ -1,7 +1,10 @@
 # Backend set up spend-analizer
 
 ## required - to - install 
-`install python`
+
+`postgresql`
+
+`python`
 
 ## windows 
 create vertual env
