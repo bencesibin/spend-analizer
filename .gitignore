@@ -133,3 +133,6 @@ dmypy.json
 
 # statements
 server/statements/*.PDF
+
+# client files
+client/package-lock.json

@@ -12,7 +12,14 @@ url = "postgresql://postgres:hello@localhost/statements"
 connection = psycopg2.connect(url)
 
 CREATE_TABLE_NEW = (
-    'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; CREATE TABLE IF NOT EXISTS statements (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, file_name TEXT , whole_line TEXT , date DATE , ref_id TEXT ,  ref TEXT , disc TEXT , amount NUMERIC , type TEXT);'
+    " ".join([
+        'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";',
+        'CREATE TABLE IF NOT EXISTS users (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, name TEXT);',
+        'CREATE TABLE IF NOT EXISTS users_ref_ids (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY , user_id UUID ,name TEXT , ref_id TEXT);',
+        'CREATE TABLE IF NOT EXISTS ref_details (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY , name TEXT , description TEXT , ref_id TEXT);',
+        'CREATE TABLE IF NOT EXISTS users_transactions (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY , user_id UUID , name TEXT , date DATE , amount NUMERIC , type TEXT);',
+        'CREATE TABLE IF NOT EXISTS statements (id UUID DEFAULT uuid_generate_v4() PRIMARY KEY , file_name TEXT , whole_line TEXT , date DATE , ref_id TEXT ,  ref TEXT , disc TEXT , amount NUMERIC , type TEXT);'
+    ])
 )
 
 

@@ -11,7 +11,7 @@ create vertual env
 
 ```py -3 -m venv .venv```
 
-```.venv/Script/activate``` or ```source .venv/Script/activate```
+```.venv/Scripts/activate``` or ```source .venv/Scripts/activate```
 
 ## mac 
 
